@@ -6,7 +6,7 @@ helm:
 	@helmfile apply
 
 create:
-	@kind create cluster --config ./kind-config.yml
+	@kind create cluster --config ./kind-config.yaml
 
 destroy:
 	@kind delete cluster

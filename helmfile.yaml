@@ -34,7 +34,7 @@ releases:
       namespace: ingress-controller
       createNamespace: true
       values:
-        - ./values/ingress-nginx/values.yml
+        - ./values/ingress-nginx/values.yaml
       chart: ingress-nginx/ingress-nginx
       version: 4.12.0
 
@@ -44,7 +44,7 @@ releases:
       chart: jenkins/jenkins
       version: 5.8.16
       values:
-        - ./values/jenkins/values.yml
+        - ./values/jenkins/values.yaml
 
     - name: gitea
       namespace: gitea
@@ -52,7 +52,7 @@ releases:
       chart: gitea/gitea
       version: 10.6.0
       values:
-        - ./values/gitea/values.yml
+        - ./values/gitea/values.yaml
     
     - name: harbor
       namespace: harbor
@@ -60,7 +60,7 @@ releases:
       chart: harbor/harbor
       version: 1.16.2
       values:
-        - ./values/harbor/values.yml
+        - ./values/harbor/values.yaml
 
     - name: sonar
       namespace: sonar
@@ -68,7 +68,7 @@ releases:
       chart: sonarqube/sonarqube
       version: 2025.1.0
       values:
-        - ./values/sonarqube/values.yml
+        - ./values/sonarqube/values.yaml
     
     - name: argo
       namespace: argo
@@ -76,7 +76,7 @@ releases:
       chart: argo/argo-cd
       version: 7.8.5
       values:
-        - ./values/argoCD/values.yml
+        - ./values/argoCD/values.yaml
 
     - name: imagepull
       namespace: imagepull
@@ -84,4 +84,4 @@ releases:
       chart: empathyco/imagepullsecret-patcher
       version: 1.0.0
       values:
-        - ./values/imagePullSecret/values.yml
+        - ./values/imagePullSecret/values.yaml

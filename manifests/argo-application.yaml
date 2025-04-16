@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+  namespace: argo
+spec:
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: application
+  source:
+    repoURL: ssh://git@gitea-ssh.gitea.svc.cluster.local:2222/gustavocosta.me/helm-applications.git
+    path: sample-app
+    targetRevision: main
+    helm:
+      releaseName: sample-app
+      valueFiles:
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: api
